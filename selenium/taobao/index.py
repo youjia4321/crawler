@@ -42,11 +42,11 @@ class SeleniumObject(object):
 
         password_input = self.wait.until(EC.presence_of_element_located((By.ID, 'TPL_password_1')))
 
-        # user = input("用户名：")
-        # password = input("密码：")
+        user = input("用户名：")
+        password = input("密码：")
 
-        username_input.send_keys("13679015244")
-        password_input.send_keys('xjmsns')
+        username_input.send_keys(user)
+        password_input.send_keys(password)
 
         time.sleep(5)
 

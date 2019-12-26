@@ -47,10 +47,10 @@ def main():
     # 点击密码登录按钮，选择用密码方式登录,如打开浏览器的界面是登录，此行可省略
 
     input = browser.find_element_by_xpath("//*[@id='TPL_username_1']")
-    input.send_keys('13679015244')
+    input.send_keys('用户名')
     input.send_keys(Keys.ENTER)
     password = browser.find_element_by_id('TPL_password_1')
-    password.send_keys('xjmsns')
+    password.send_keys('密码')
     time.sleep(1)
     password.send_keys(Keys.ENTER)
     time.sleep(1)
