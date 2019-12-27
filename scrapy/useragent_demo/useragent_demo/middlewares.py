@@ -69,3 +69,18 @@ class UseragentDemoDownloaderMiddleware(object):
         print("#"*80)
         print(random.choice(self.agents))
         request.headers['User-Agent'] = random.choice(self.agents)
+
+
+class IPProxyDownloaderMiddleware(object):
+    def __init__(self, ip):
+        self.ip = ip
+
+    @classmethod
+    def from_crawler(cls, crawler):
+        # IP_LIST需要自己找代理
+        return cls(crawler.settings.getlist('IP_LIST'))
+
+    def process_request(self, request, spider):
+        print("#"*80)
+        print(random.choice(self.ip))
+        request.meta['proxy'] = random.choice(self.ip)
